@@ -1,5 +1,5 @@
 import styles from './select.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 type SelectOption = {
   label: string
   value: any
@@ -16,12 +16,14 @@ export function Select({ value, onChange, options }: SelectProps) {
     onChange(undefined)
   }
   function selectOption(option: SelectOption) {
-    onChange(option)
+    if (option !== value) onChange(option)
   }
   function isOptionSelected(option: SelectOption) {
     return option === value
   }
-
+  useEffect(() => {
+    if (isOpen) setHighlightedIndex(0)
+  }, [isOpen])
   return (
     <div
       onBlur={() => setIsOpen(false)}
