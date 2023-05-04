@@ -15,6 +15,9 @@
 }
 .value {
   flex-grow: 1;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
 }
 .clear-btn {
   background: none;
@@ -40,6 +43,7 @@
   border-top-color: #777;
 }
 .options {
+  position: absolute;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -50,7 +54,7 @@
   border-radius: 0.25em;
   width: 100%;
   left: 0;
-  top: calc(100%+0.25em);
+  top: calc(100% + 0.25em);
   background-color: white;
   z-index: 100;
 }
