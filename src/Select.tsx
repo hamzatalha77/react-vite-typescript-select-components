@@ -1,6 +1,6 @@
 import styles from './select.module.css'
 import { useEffect, useState } from 'react'
-type SelectOption = {
+export type SelectOption = {
   label: string
   value: string | number
 }
